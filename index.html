@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Flowcharter</title>
+        <link rel="stylesheet" href="./css/ui.css">
+    </head>
+    <body>
+        <svg class="canvas" xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 100 100">
+            
+        </svg>
+        <div class="nav">
+            <button onclick="zoomIn()">+</button><br />
+            <button onclick="zoomOut()">-</button>
+        </div>
+        <div class="tools">
+            <button onclick="showAddCardModal()">Add Card</button>
+        </div>
+        <div id="add-card-modal-overlay" class="modal-overlay">
+            &nbsp;
+        </div>
+        <div id="add-card-modal" class="modal">
+            <form name="addCardForm" class="modal-form" onsubmit="event.preventDefault(); return addCard()">
+                <h2>Add Card</h2>
+                <label for="cardLabelInput">
+                    Card Label:
+                </label>
+                <input id="card-label-input" name="cardLabelInput" type="text" />
+                <br />
+                <label for="cardWidthInput">
+                    Width:
+                </label>
+                <input id="card-width-input" name="cardWidthInput" type="text" />
+                <br />
+                <label for="cardHeightInput">
+                    Height:
+                </label>
+                <input id="card-height-input" name="cardHeightInput" type="text" />
+                <p>Card Action On Click:</p>
+                <input type="radio" id="card-action-url-input" name="cardActionInput" value="1" checked>
+                <label for="card-action-url-input">Open Url</label>
+                <input type="radio" id="card-action-modal-input" name="cardActionInput" value="2">
+                <label for="card-action-modal-input">Show Modal</label><br />
+                <label for="cardUrlInput">
+                    Url:
+                </label>
+                <input id="card-url-input" name="cardUrlInput" type="text" />
+                <br />
+                <label for="cardModalInput">
+                    Modal Content:
+                </label>
+                <br />
+                <textarea name="cardModalInput" cols="40" rows="5"></textarea>
+                <br />
+                <input type="submit" value="Add Card">
+            </form>
+        </div>
+        <div id="card-modal" class="modal">
+
+        </div>
+        <div id="asdf"></div>
+        <script defer src="./js/draw.js"></script>
+        <script defer src="./js/ui.js"></script>
+    </body>
+</html>
